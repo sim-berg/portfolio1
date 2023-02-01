@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="./static/favicon/pngfavicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Bergmaier</title>
+</head>
+<body>
+    <div id="preloaderleft">
+        
+           
+            <span class="uppersin"></span>
+            <span class="uppersout"></span>
+     
+
+    </div>
+    <div id="preloaderright">
+       
+            <span class="upperbin"></span>
+            <span class="lowersin"></span>
+            <span class="upperbout"></span>
+            <span class="lowerbin"></span>
+            <span class="lowerbout"></span>
+        
+
+    </div>
+    <canvas class="webgl"></canvas>
+    <button id="engbutton" class="english">English</button>
+    <button id='gerbutton' class="german">Deutsch</button>
+    
+    <div class="spacer"></div>
+    <div data-aos="slide-right" data-aos-anchor-placement="top-center" data-aos-easing="ease-in-out" data-aos-once="false" class="contact">
+        
+   <div  class="cform"> 
+    
+<form action="" method="POST">
+<input placeholder="name" class="name" type="text" name="name" required/>
+<input placeholder="email-adress" class="email" type="email" name="email" required/>
+<textarea aria-placeholder="Send me a Message" rows="8" class="message" type="text" name="message" placeholder="Send me a Message" required></textarea>
+<input type="hidden" name="_next" value=""/>
+<input type="hidden" name="_subject" value="Jemand hat dir über -Bumpergesung geschrieben"/>
+<button class="contactbutton ripple" type="submit">Send</button>
+</form></div>  
+
+    </div>
+    <div class="spacer2"></div>
+    <script type="module" src="/main.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+
+</html>
