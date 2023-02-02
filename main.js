@@ -443,7 +443,7 @@ fontLoader.load(fonturl, (font) =>{
 
 const bgsphere = new THREE.SphereGeometry(30,30,30)
 const bgtexture = new THREE.MeshBasicMaterial()
-const bg = textureLoader.load('../static/bg/sky4.jpg')
+const bg = textureLoader.load('./static/bg/sky4.jpg')
 bgtexture.map = bg
 
 bgtexture.side = 1
@@ -481,28 +481,28 @@ scene.add( group );
 
 const sphere1 = new THREE.SphereGeometry(2,10,10)
 const texture1 = new THREE.MeshBasicMaterial()
-const link1tex = textureLoader.load('../static/textures/links/beemagie.jpg')
+const link1tex = textureLoader.load('./static/textures/links/beemagie.jpg')
 texture1.map = link1tex
 const link1 = new THREE.Mesh(sphere1,texture1)
 link1.rotation.y = -1
 
 const sphere2 = new THREE.SphereGeometry(2,10,10)
 const texture2 = new THREE.MeshStandardMaterial()
-const link2tex = textureLoader.load('../static/textures/links/knowherefav.png')
+const link2tex = textureLoader.load('./static/textures/links/knowherefav.png')
 texture2.map = link2tex
 const link2 = new THREE.Mesh(sphere2,texture2)
 link2.rotation.y = -1
 
 const sphere3 = new THREE.SphereGeometry(2,10,10)
 const texture3 = new THREE.MeshStandardMaterial()
-const link3tex = textureLoader.load('../static/textures/links/minecraft_logo.png')
+const link3tex = textureLoader.load('./static/textures/links/minecraft_logo.png')
 texture3.map = link3tex
 const link3 = new THREE.Mesh(sphere3,texture3)
 link3.rotation.y = -1
 
 const sphere4 = new THREE.SphereGeometry(2,10,10)
 const texture4 = new THREE.MeshStandardMaterial()
-const link4tex = textureLoader.load('../static/textures/links/favicon4.png')
+const link4tex = textureLoader.load('./static/textures/links/favicon4.png')
 texture4.map = link4tex
 const link4 = new THREE.Mesh(sphere4,texture4)
 link4.rotation.y = -2
