@@ -455,7 +455,7 @@ scene.add(bggood)
 
 const gltfLoader = new GLTFLoader();
 
-gltfLoader.load ('./static/3dobject/cy6.glb',
+gltfLoader.load ('./static/3dobject/cy7.glb',
 (gltf) => 
 {
 group.add(gltf.scene.children[0])

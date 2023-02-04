@@ -117,7 +117,7 @@ h1{
  
  .contactbutton {
   border: 1 solid black;
-  border-radius: 2px;
+  border-radius: 5px;
   padding: 12px 18px;
   font-size: 16px;
   cursor: pointer;
