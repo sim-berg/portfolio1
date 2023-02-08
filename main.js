@@ -55,10 +55,10 @@ const scene = new THREE.Scene()
 const ambientlieght = new THREE.AmbientLight( 0xFFFFFF , 0.5)
 scene.add( ambientlieght)
 
-const pointLight = new THREE.PointLight(0xffffff, 1)
-pointLight.position.x = 3
-pointLight.position.y = 9
-pointLight.position.z = 4
+const pointLight = new THREE.PointLight(0xf0e199, 1)
+pointLight.position.x = 0
+pointLight.position.y = 12
+pointLight.position.z = -10
 scene.add(pointLight)
 //gui.add(pointLight.position, 'x',-10,10,0.05)
 //gui.add(pointLight.position, 'y',-10,20,0.05)
@@ -67,14 +67,14 @@ scene.add(pointLight)
 const textureLoader = new THREE.TextureLoader()
 
 /**
- * Object 
+ * Objects
  * 
  * 
  */
  const group = new THREE.Group();
  const group2 = new THREE.Group()
 
-    const textcolor = "grey"
+    const textcolor = "#64748b"
     const fonturl = '../static/fonts/fonts/helvetiker_bold.typeface.json'
     let text1e = 'Hi, I`m Simon Bergmaier'
     let text2te = 'a Webdeveloper with'
@@ -155,11 +155,11 @@ function CreateText(text1, text2t, text2d, text3t , text4c ,text4cd, text5s) {
         {
             font: font,
             size: 0.5,
-            height: 0.2,
+            height: 0,
             curveSegments: 5,
-            bevelEnabled: true,
-            bevelThickness: 0.03,
-            bevelSize: 0.02,
+            bevelEnabled: false,
+            bevelThickness: 0,
+            bevelSize: 0,
             bevelOffset: 0,
             bevelSegments: 5
         }
@@ -187,9 +187,9 @@ function CreateText(text1, text2t, text2d, text3t , text4c ,text4cd, text5s) {
         {
             font: font,
             size: 0.5,
-            height: 0.2,
+            height: 0,
             curveSegments: 5,
-            bevelEnabled: true,
+            bevelEnabled: false,
             bevelThickness: 0.03,
             bevelSize: 0.02,
             bevelOffset: 0,
@@ -217,9 +217,9 @@ function CreateText(text1, text2t, text2d, text3t , text4c ,text4cd, text5s) {
         {
             font: font,
             size: 0.5,
-            height: 0.2,
+            height: 0,
             curveSegments: 5,
-            bevelEnabled: true,
+            bevelEnabled: false,
             bevelThickness: 0.03,
             bevelSize: 0.02,
             bevelOffset: 0,
@@ -255,9 +255,9 @@ function CreateText(text1, text2t, text2d, text3t , text4c ,text4cd, text5s) {
         {
             font: font,
             size: 0.5,
-            height: 0.2,
+            height: 0,
             curveSegments: 5,
-            bevelEnabled: true,
+            bevelEnabled: false,
             bevelThickness: 0.03,
             bevelSize: 0.02,
             bevelOffset: 0,
@@ -285,9 +285,9 @@ function CreateText(text1, text2t, text2d, text3t , text4c ,text4cd, text5s) {
            {
                font: font,
                size: 0.5,
-               height: 0.2,
+               height: 0,
                curveSegments: 5,
-               bevelEnabled: true,
+               bevelEnabled: false,
                bevelThickness: 0.03,
                bevelSize: 0.02,
                bevelOffset: 0,
@@ -313,9 +313,9 @@ function CreateText(text1, text2t, text2d, text3t , text4c ,text4cd, text5s) {
                {
                    font: font,
                    size: 0.5,
-                   height: 0.2,
+                   height: 0,
                    curveSegments: 5,
-                   bevelEnabled: true,
+                   bevelEnabled: false,
                    bevelThickness: 0.03,
                    bevelSize: 0.02,
                    bevelOffset: 0,
@@ -345,9 +345,9 @@ function CreateText(text1, text2t, text2d, text3t , text4c ,text4cd, text5s) {
         {
             font: font,
             size: 0.5,
-            height: 0.2,
+            height: 0,
             curveSegments: 5,
-            bevelEnabled: true,
+            bevelEnabled: false,
             bevelThickness: 0.03,
             bevelSize: 0.02,
             bevelOffset: 0,
@@ -372,9 +372,9 @@ function CreateText(text1, text2t, text2d, text3t , text4c ,text4cd, text5s) {
         {
             font: font,
             size: 0.5,
-            height: 0.2,
+            height: 0,
             curveSegments: 5,
-            bevelEnabled: true,
+            bevelEnabled: false,
             bevelThickness: 0.03,
             bevelSize: 0.02,
             bevelOffset: 0,
@@ -401,9 +401,9 @@ fontLoader.load(fonturl, (font) =>{
         {
             font: font,
             size: 2,
-            height: 1,
+            height: 0,
             curveSegments: 5,
-            bevelEnabled: true,
+            bevelEnabled: false,
             bevelThickness: 0.03,
             bevelSize: 0.02,
             bevelOffset: 0,
@@ -687,3 +687,45 @@ const tick = () =>
 }
 
 tick()
+
+
+//
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const overlay = document.getElementById('overlay')
+
+
+
+overlay.addEventListener('click', () => {
+  const modals = document.querySelectorAll('.modal.active')
+  modals.forEach(modal => {
+    closeModal(modal)
+  })
+})
+
+closeModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = button.closest('.modal')
+    closeModal(modal)
+  })
+})
+
+function openModal(modal) {
+  if (modal == null) return
+  if(window.innerWidth< 600) {
+  modal.classList.add('active')
+  overlay.classList.add('active')
+  } else {
+    modal.classList.remove('active')
+    overlay.classList.remove('active')
+  }
+}
+
+function closeModal(modal) {
+  if (modal == null) return
+  modal.classList.remove('active')
+  overlay.classList.remove('active')}
+
+
+  window.addEventListener('resize', ()=> { openModal(modal)})
+
+  openModal(modal)

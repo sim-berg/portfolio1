@@ -10,7 +10,7 @@ html {
 
 :root{
 
-  --preback: rgb(155, 186, 228);
+  --preback: #e2e8f0;
 }
 
 
@@ -18,6 +18,11 @@ html,
 body
 {   
     overflow-x: hidden;
+}
+
+@font-face {
+  font-family:Helvetica;
+  src: url(./public/static/fonts/fonts/helvetiker_regular.typeface.json);
 }
 
 #preloaderleft {
@@ -70,7 +75,7 @@ h1{
 .english, .german{
   color:rgb(255, 255, 255);
   position: fixed;
-  background-color: rgb(38, 38, 38);
+  background-color: #1e293b;
   padding: 0.5rem;
   margin-top: 1rem;
   margin-left: 0.5rem;
@@ -122,14 +127,16 @@ h1{
   font-size: 16px;
   cursor: pointer;
   color: white;
-  background-color: #2196f3;
+  background-color: #475569;
   box-shadow: 0 0 4px #999;
   outline: none;
+  
+}
+.contactmargin{
   margin-left: 4rem;
   margin-top: 3%;
   margin-bottom: 5rem;
 }
-
 
 .ctext{
   margin-bottom: 6%;
@@ -140,7 +147,7 @@ h1{
 
 
 .slide-out-left{
-
+  animation-delay: 3s;
   animation: slide-out-left 3s forwards;
   -webkit-animation: slide-out-left 3s forwards;
 }
@@ -156,7 +163,7 @@ h1{
 }
 
 .slide-out-right{
-
+  animation-delay: 3s;
   animation: slide-out-right 3s forwards;
   -webkit-animation: slide-out-right 3s forwards;
 }
@@ -169,6 +176,25 @@ h1{
 @-webkit-keyframes slide-out-right {
   0% { -webkit-transform: translateX(0%); }
   100% { -webkit-transform: translateX(100%); }}
+
+  .fade{
+    
+   
+    -webkit-animation: fadeOut 3s;
+    animation: fadeOut 3s;
+    animation-fill-mode: forwards;
+  }
+  
+  @-webkit-keyframes fadeOut {
+    0% { opacity: 1;}
+    99% { opacity: 0.01;width: 100%; height: 100%;}
+    100% { opacity: 0;width: 0; height: 0;}
+}  
+@keyframes fadeOut {
+    0% { opacity: 1;}
+    99% { opacity: 0.01;width: 100%; height: 100%;}
+    100% { opacity: 0;width: 0; height: 0;}
+}
 
 
 
@@ -292,11 +318,86 @@ h1{
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(208, 208, 208);
+  background: #e2e8f0;
   
   
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(128, 130, 128);
+}
+
+
+.modal {
+  position: fixed;
+  
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 5px;
+  z-index: 10;
+  background-color: #cbd5e1;
+  width: 500px;
+  max-width: 80%;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-body {
+ 
+  text-align: center;
+}
+.m-margin{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#overlay {
+  z-index: 3;
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;}
+
+.rotate {
+  width: 200px;
+  height: 200px;
+  margin: auto;
 }

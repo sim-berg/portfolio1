@@ -7,6 +7,7 @@
     <title>Simon Bergmaier</title>
 </head>
 <body>
+    
     <div id="preloaderleft">
         
            
@@ -25,6 +26,23 @@
         
 
     </div>
+    
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="title">Turn your device sideways for a better Experience</div>
+      
+    </div>
+    <div class="modal-body">
+      <img class="rotate" src="./static/img/rotate.png" alt="" srcset="">
+      
+    </div>
+    <div class="modal-body">
+        
+        <button data-close-button class="contactbutton ripple m-margin">Close</button>
+      </div>
+   
+  </div>
+  <div id="overlay"></div>
     <canvas class="webgl"></canvas>
     <button id="engbutton" class="english">English</button>
     <button id='gerbutton' class="german">Deutsch</button>
@@ -40,7 +58,7 @@
 <textarea aria-placeholder="Send me a Message" rows="8" class="message" type="text" name="message"  required></textarea>
 
 <input type="hidden" name="_subject" value="Jemand hat dir geschrieben :)"/>
-<button class="contactbutton ripple" type="submit">Send</button>
+<button class="contactbutton ripple contactmargin" type="submit">Send</button>
 </form></div>  
 
     </div>
