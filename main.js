@@ -77,22 +77,22 @@ const textureLoader = new THREE.TextureLoader()
     const textcolor = "#64748b"
     const fonturl = '../static/fonts/fonts/helvetiker_bold.typeface.json'
     let text1e = 'Hi, I`m Simon Bergmaier'
-    let text2te = 'a Webdeveloper with'
-    let text2de = 'focus on 3D graphics'
+    let text2te = 'a Developer with focus'
+    let text2de = 'on performant application'
     let text3te = 'Current Techstack:'
     let text4ce = 'Your Way through'
-    let text4cde = 'the Internet-thicket'
+    let text4cde = 'the programming-thicket'
     let text5e = 'My Works:'
 // german english version
 let gerbutton = document.getElementById('gerbutton')
 
 gerbutton.addEventListener('click', () => {
 let text1d = 'Hi, mein Name ist Simon Bergmaier'
-let text2td = 'ein Webentwickler mit'
-let text2dd = 'Fokus auf 3D Grafiken'    
+let text2td = 'ein Entwickler mit Fokus'
+let text2dd = 'auf performante Anwendungen'    
 let text3td = 'Kompetenzen:'
 let text4cd = 'Ihr Weg durch das'
-let text4cdd = 'Dickicht des Internets'
+let text4cdd = 'Dickicht der Programme'
 let text5d = 'Meine Werke:'
 
 CreateText(text1d,text2td, text2dd,text3td, text4cd,text4cdd, text5d)
@@ -110,11 +110,11 @@ let engbutton = document.getElementById('engbutton')
 
 engbutton.addEventListener('click', () => {
     let text1e = 'Hi, I`m Simon Bergmaier'
-    let text2te = 'a Webdeveloper with'
-    let text2de = 'focus on 3D graphics'
+    let text2te = 'a Developer with focus'
+    let text2de = 'on performant applications'
     let text3te = 'Current Techstack:'
     let text4ce = 'Your Way through'
-    let text4cde = 'the Internet-thicket'
+    let text4cde = 'the programming-thicket'
     let text5e = 'My Works:'
 CreateText(text1e,text2te, text2de,text3te, text4ce ,text4cde, text5e)
 RemoveText('textfirst')
@@ -309,7 +309,7 @@ function CreateText(text1, text2t, text2d, text3t , text4c ,text4cd, text5s) {
      fontLoader.load(fonturl, (font) =>{
         // React Next.js Three 
            const textGeometry = new TextGeometry(
-               'Three.js, React-Three-Fiber',
+               'Three.js, C++',
                {
                    font: font,
                    size: 0.5,
